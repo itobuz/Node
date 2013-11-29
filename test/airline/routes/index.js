@@ -17,7 +17,9 @@ module.exports = function (flights){
 
 	functions.flight = function(req, res){
 		var number = req.param('number');
-	  
+	  	
+		req.session.lastNumber = number;
+
 		if(typeof flights[number] === 'undefined'){
 			res.status(404).json({status: 'error'});
 		} else {
@@ -76,7 +78,8 @@ module.exports = function (flights){
 			} else {
 				res.render('arrivals', {
 					title: 'Arrivals',
-					arrivals: arrivals
+					arrivals: arrivals,
+					lastNumber: req.session.lastNumber
 				});
 			}
 		})
