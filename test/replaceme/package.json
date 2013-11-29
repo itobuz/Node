@@ -1,0 +1,18 @@
+{
+  "name": "replaceme",
+  "version": "0.0.0",
+  "description": "test",
+  "main": "lib/main",
+  "bin": {
+    "replaceme": "replaceme.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "jack",
+  "license": "BSD",
+  "keywords": [
+    "key"
+  ]
+}

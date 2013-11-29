@@ -1,0 +1,58 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'adduser' ]
+2 info using npm@1.2.24
+3 info using node@v0.10.9
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose adduser before first PUT { name: 'jack',
+5 verbose adduser   salt: 'XXXXX',
+5 verbose adduser   password_sha: 'XXXXX',
+5 verbose adduser   email: 'sagarsneh@gmail.com',
+5 verbose adduser   _id: 'org.couchdb.user:jack',
+5 verbose adduser   type: 'user',
+5 verbose adduser   roles: [],
+5 verbose adduser   date: '2013-11-05T16:53:29.129Z' }
+6 verbose url raw /-/user/org.couchdb.user:jack
+7 verbose url resolving [ 'https://registry.npmjs.org/',
+7 verbose url resolving   './-/user/org.couchdb.user:jack' ]
+8 verbose url resolved https://registry.npmjs.org/-/user/org.couchdb.user:jack
+9 info trying registry request attempt 1 at 22:23:29
+10 http PUT https://registry.npmjs.org/-/user/org.couchdb.user:jack
+11 http 409 https://registry.npmjs.org/-/user/org.couchdb.user:jack
+12 verbose adduser update existing user
+13 verbose url raw /-/user/org.couchdb.user:jack
+14 verbose url resolving [ 'https://registry.npmjs.org/',
+14 verbose url resolving   './-/user/org.couchdb.user:jack' ]
+15 verbose url resolved https://registry.npmjs.org/-/user/org.couchdb.user:jack
+16 info trying registry request attempt 1 at 22:23:31
+17 http GET https://registry.npmjs.org/-/user/org.couchdb.user:jack
+18 http 401 https://registry.npmjs.org/-/user/org.couchdb.user:jack
+19 verbose adduser back [ [Error: unauthorized Name or password is incorrect.: -/user/org.couchdb.user:jack],
+19 verbose adduser   { error: 'unauthorized',
+19 verbose adduser     reason: 'Name or password is incorrect.' },
+19 verbose adduser   '{"error":"unauthorized","reason":"Name or password is incorrect."}\n' ]
+20 warn adduser Incorrect username or password
+20 warn adduser You can reset your account by visiting:
+20 warn adduser
+20 warn adduser     http://admin.npmjs.org/reset
+21 error Error: unauthorized Name or password is incorrect.: -/user/org.couchdb.user:jack
+21 error     at RegClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:272:14)
+21 error     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\index.js:148:22)
+21 error     at Request.EventEmitter.emit (events.js:98:17)
+21 error     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\index.js:876:14)
+21 error     at Request.EventEmitter.emit (events.js:117:20)
+21 error     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\index.js:827:12)
+21 error     at IncomingMessage.EventEmitter.emit (events.js:117:20)
+21 error     at _stream_readable.js:910:16
+21 error     at process._tickCallback (node.js:415:13)
+22 error If you need help, you may report this log at:
+22 error     <http://github.com/isaacs/npm/issues>
+22 error or email it to:
+22 error     <npm-@googlegroups.com>
+23 error System Windows_NT 6.1.7601
+24 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "adduser"
+25 error cwd D:\projects\htdocs\node\test\replaceme
+26 error node -v v0.10.9
+27 error npm -v 1.2.24
+28 verbose exit [ 1, true ]
