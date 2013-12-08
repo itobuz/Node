@@ -4,6 +4,28 @@
  */
 
 var FlightSchema = require('../schemas/flight');
+var Emitter = require('events').EventEmitter;
+
+var flightEmitter = new Emitter();
+
+flightEmitter.on('arrival', function(flights) {
+
+			var record = new FlightSchema(
+				flights.getInformation()
+			)
+
+			record.save(function (err){
+				if(err) {
+					console.log(err);
+					//res.status(500).json({status: 'failure'});
+				} 
+			});
+			//res.json({status: 'done'});
+})
+
+flightEmitter.on('arrival', function(flights) {
+	console.log("Flight Arrived: "+ flights.data.number);
+})
 
 module.exports = function (flights){
 	
@@ -33,21 +55,11 @@ module.exports = function (flights){
 		if(typeof flights[number] === 'undefined'){
 			res.status(404).json({status: 'error'});
 		} else {
+
 			flights[number].triggerArrive();
+			flightEmitter.emit('arrival', flights[number]);
+			res.json({status: 'success'});
 
-			var record = new FlightSchema(
-				flights[number].getInformation()
-			)
-
-			record.save(function (err){
-				if(err) {
-					console.log(err);
-					res.status(500).json({status: 'failure'});
-				} else {
-					res.json({status: 'success'});
-				}
-			});
-			res.json({status: 'done'});
 			//res.json(flights[number].getInformation());
 		}
 	}
