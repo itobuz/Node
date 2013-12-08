@@ -27,5 +27,11 @@ module.exports = {
 		"departs": "10:00 AM",
 		"arrives": "12:00 PM"
 	},
-
+	"72": {
+		"number": 72,
+		"origin": "MKE2",
+		"destination": "LAX2",
+		"departs": "10:00 AM",
+		"arrives": "12:00 PM"
+	},
 }
